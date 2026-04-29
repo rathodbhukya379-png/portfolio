@@ -178,3 +178,45 @@ img:hover {
     background: rgba(255,255,255,0.8);
     color: black;
 }
+
+.video-container {
+    cursor: pointer;
+}
+
+.video-container {
+    max-width: 650px; /* was 800 */
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    color: white;
+
+    backdrop-filter: blur(5px);
+    transition: all 0.2s ease;
+}
+
+.video-container:hover .play-button {
+    background: white;
+    color: black;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
