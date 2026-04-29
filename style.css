@@ -220,3 +220,14 @@ img:hover {
     inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    z-index: 1;
+}
+
+.play-button {
+    z-index: 2;
+}
