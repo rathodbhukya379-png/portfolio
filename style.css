@@ -135,3 +135,9 @@ html {
     max-width: 700px;
     margin: auto;
 }
+
+/* hover zoom */
+img:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
