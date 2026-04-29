@@ -141,3 +141,40 @@ img:hover {
     transform: scale(1.03);
     transition: 0.3s;
 }
+.video-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255,255,255,0.15);
+}
+
+.video-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.video-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Play button */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 25px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.video-container:hover .play-button {
+    background: rgba(255,255,255,0.8);
+    color: black;
+}
