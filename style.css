@@ -1,4 +1,6 @@
-/* ===== GLOBAL ===== */
+/* ===============================
+   🎬 GLOBAL
+================================= */
 body {
     background-color: #0a0a0a;
     color: #f5f5f5;
@@ -10,7 +12,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* SECTION SPACING */
+/* ===============================
+   🎬 SECTION ANIMATION
+================================= */
 .section {
     padding: 100px 0;
     opacity: 0;
@@ -23,21 +27,24 @@ html {
     transform: translateY(0);
 }
 
-/* HEADINGS */
+/* ===============================
+   🎬 HEADINGS
+================================= */
 h2 {
     font-size: 2rem;
     margin-bottom: 40px;
     letter-spacing: 1px;
 }
 
-/* ===== HERO ===== */
+/* ===============================
+   🎬 HERO SECTION
+================================= */
 .hero {
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
-/* Background image */
 .hero-bg {
     position: absolute;
     inset: 0;
@@ -46,7 +53,6 @@ h2 {
     z-index: 0;
 }
 
-/* Content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -58,7 +64,6 @@ h2 {
     animation: fadeIn 2s ease;
 }
 
-/* Hero text */
 .hero h1 {
     font-size: 5rem;
     letter-spacing: 3px;
@@ -69,7 +74,6 @@ h2 {
     text-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-/* Button */
 .enter-btn {
     margin-top: 20px;
     padding: 10px 20px;
@@ -96,7 +100,9 @@ h2 {
     }
 }
 
-/* ===== NETFLIX STYLE CARDS ===== */
+/* ===============================
+   🎬 NETFLIX STYLE CARDS
+================================= */
 .project-card {
     position: relative;
     overflow: hidden;
@@ -112,7 +118,7 @@ h2 {
     transform: scale(1.1);
 }
 
-/* Gradient overlay */
+/* Overlay */
 .project-card::after {
     content: '';
     position: absolute;
@@ -120,7 +126,7 @@ h2 {
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
-/* Text overlay */
+/* Text */
 .overlay-text {
     position: absolute;
     bottom: 10px;
@@ -128,7 +134,9 @@ h2 {
     z-index: 2;
 }
 
-/* ===== FUSION LEAGUE POSTER ===== */
+/* ===============================
+   🎬 FUSION LEAGUE POSTER
+================================= */
 .video-container {
     position: relative;
     width: 100%;
@@ -140,19 +148,17 @@ h2 {
     cursor: pointer;
 }
 
-/* Image */
 .video-container img {
     width: 100%;
     display: block;
     transition: transform 0.3s ease;
 }
 
-/* Hover zoom */
 .video-container:hover img {
     transform: scale(1.04);
 }
 
-/* Overlay */
+/* Gradient */
 .overlay {
     position: absolute;
     inset: 0;
@@ -205,19 +211,21 @@ h2 {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Play hover */
 .video-container:hover .play-button {
     transform: translate(-50%, -50%) scale(1.1);
     background: rgba(255,255,255,0.9);
     color: black;
 }
 
+/* ===============================
+   🎬 YOUTUBE VIDEO (RESPONSIVE)
+================================= */
 .video-wrapper {
     position: relative;
     width: 100%;
     max-width: 800px;
     margin: auto;
-    padding-top: 56.25%; /* 16:9 */
+    padding-top: 56.25%;
 }
 
 .video-wrapper iframe {
