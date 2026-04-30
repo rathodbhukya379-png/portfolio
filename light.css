@@ -128,9 +128,9 @@ h2 {
 
     background: linear-gradient(
         to top,
-        rgba(0,0,0,0.85),
-        rgba(0,0,0,0.4),
-        transparent
+        rgba(0,0,0,0.65),   /* strong at bottom for text */
+        rgba(0,0,0,0.25),   /* soft middle */
+        transparent         /* no dark at top */
     );
 }
 
@@ -139,8 +139,13 @@ h2 {
     transition: all 0.4s ease;
 }
 
+.project-card img {
+    filter: brightness(0.95);  /* was too dark before */
+    transition: all 0.4s ease;
+}
+
 .project-card:hover img {
-    filter: brightness(1);
+    filter: brightness(1.05);
 }
 
 
