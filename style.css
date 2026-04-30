@@ -1,59 +1,52 @@
-/* BODY */
+/* ===== GLOBAL ===== */
 body {
     background-color: #0a0a0a;
-    color: white;
-    font-family: Arial, sans-serif;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
-<h1>Rathod</h1>
-<p>Visual Storyteller • Cinematographer • Editor • Esports Organizer</p>
-/* HERO */
-.hero h1, .hero p {
-    color: white;
-    text-shadow: 0px 0px 15px rgba(0,0,0,0.8);
+
+html {
+    scroll-behavior: smooth;
 }
+
+/* SECTION SPACING */
+.section {
+    padding: 100px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HEADINGS */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* ===== HERO ===== */
 .hero {
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
-.hero-content {
-    animation: fadeIn 2s ease;
-}
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-/* BACKGROUND IMAGE */
+/* Background image */
 .hero-bg {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: url("img/hero.jpg") center/cover no-repeat;
-    filter: brightness(0.5);
+    filter: brightness(0.4);
     z-index: 0;
 }
-.hero-bg {
-    animation: zoom 12s ease-in-out infinite alternate;
-}
 
-@keyframes zoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-}
-
-/* OVERLAY (optional but nice) */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-/* CONTENT */
+/* Content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -62,82 +55,80 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 2s ease;
 }
 
-/* DARK OVERLAY */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-/* TEXT ABOVE OVERLAY */
-.hero h1, .hero p, .hero a {
-    position: relative;
-    z-index: 1;
-}
-
-/* TITLE STYLE */
+/* Hero text */
 .hero h1 {
     font-size: 5rem;
     letter-spacing: 3px;
-    background: linear-gradient(to right, #fff, #777);
-    -webkit-background-clip: text;
-    color: transparent;
+    text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-/* SECTION SPACING */
-.section {
-    margin-top: 120px;
+.hero p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-/* PROJECT CARDS */
+/* Button */
+.enter-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.enter-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== NETFLIX STYLE CARDS ===== */
 .project-card {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .project-card img {
     width: 100%;
-    transition: 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .project-card:hover img {
     transform: scale(1.1);
 }
 
-/* OVERLAY TEXT */
+/* Gradient overlay */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* Text overlay */
 .overlay-text {
     position: absolute;
     bottom: 10px;
     left: 15px;
-    color: white;
-    font-size: 1.2rem;
+    z-index: 2;
 }
 
-/* VIDEO STYLE */
-video {
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-}
-
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-}
-.section p {
-    color: #bbb;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* ===== FUSION LEAGUE POSTER CLEAN VERSION ===== */
-
+/* ===== FUSION LEAGUE POSTER ===== */
 .video-container {
     position: relative;
     width: 100%;
@@ -149,27 +140,27 @@ html {
     cursor: pointer;
 }
 
-/* IMAGE */
+/* Image */
 .video-container img {
     width: 100%;
     display: block;
     transition: transform 0.3s ease;
 }
 
-/* ZOOM */
+/* Hover zoom */
 .video-container:hover img {
     transform: scale(1.04);
 }
 
-/* OVERLAY */
+/* Overlay */
 .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2), transparent);
     z-index: 1;
 }
 
-/* TEXT */
+/* Poster text */
 .poster-text {
     position: absolute;
     bottom: 20px;
@@ -189,7 +180,7 @@ html {
     opacity: 0.8;
 }
 
-/* PLAY BUTTON */
+/* Play button */
 .play-button {
     position: absolute;
     top: 50%;
@@ -214,12 +205,11 @@ html {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* HOVER */
+/* Play hover */
 .video-container:hover .play-button {
     transform: translate(-50%, -50%) scale(1.1);
     background: rgba(255,255,255,0.9);
     color: black;
-}
 }
 
 .video-wrapper {
