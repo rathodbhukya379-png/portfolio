@@ -1,8 +1,8 @@
-/* ===============================
-    SMOOTH SCROLL
-================================= */
+// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+
+    anchor.addEventListener('click', function(e) {
+
         e.preventDefault();
 
         const target = document.querySelector(this.getAttribute('href'));
@@ -12,55 +12,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
+
     });
+
 });
 
 
-/* ===============================
-    SCROLL FADE-IN ANIMATION
-================================= */
-const sections = document.querySelectorAll('.section');
-
-function revealSections() {
-    const triggerPoint = window.innerHeight * 0.85;
-
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if (sectionTop < triggerPoint) {
-            section.classList.add('show');
-        }
-    });
-}
-
-window.addEventListener('scroll', revealSections);
-
-// Run once on load
-revealSections();
-
-
-/* ===============================
-    HOVER SOUND (SAFE VERSION)
-================================= */
+// Hover Sound
 function playSound() {
-    const sound = document.getElementById("hoverSound");
 
-    if (sound) {
-        sound.volume = 0.2;
-        sound.currentTime = 0;
+    let sound = document.getElementById("hoverSound");
 
-        // Prevent browser autoplay errors
-        sound.play().catch(() => {});
-    }
+    sound.volume = 0.2;
+    sound.currentTime = 0;
+    sound.play();
+
 }
-/*=====================
-   mobile cards click
-=======================*/
+
+
+// MOBILE CARD EFFECT
 document.querySelectorAll('.project-card').forEach(card => {
 
     card.addEventListener('click', () => {
 
-        card.classList.toggle('active');
+        // remove active from all cards
+        document.querySelectorAll('.project-card').forEach(c => {
+            c.classList.remove('active');
+        });
+
+        // activate clicked card
+        card.classList.add('active');
+
+        // auto reset after 2 sec
+        setTimeout(() => {
+            card.classList.remove('active');
+        }, 2000);
 
     });
 
