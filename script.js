@@ -35,18 +35,17 @@ document.querySelectorAll('.project-card').forEach(card => {
 
     card.addEventListener('click', () => {
 
-        // remove active from all cards
-        document.querySelectorAll('.project-card').forEach(c => {
-            c.classList.remove('active');
-        });
-
-        // activate clicked card
+        // activate
         card.classList.add('active');
 
-        // auto reset after 2 sec
-        setTimeout(() => {
+        // reset timer
+        clearTimeout(card.timeout);
+
+        card.timeout = setTimeout(() => {
+
             card.classList.remove('active');
-        }, 2000);
+
+        }, 1500);
 
     });
 
