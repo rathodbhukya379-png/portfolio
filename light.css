@@ -196,6 +196,24 @@ h2 {
 .project-card.active .overlay-text {
     opacity: 0;
 }
+/* MOBILE FIX */
+@media (hover: none) {
+
+    .project-card:hover img {
+        transform: none;
+        filter: brightness(0.96);
+    }
+
+    .project-card:hover .overlay-text {
+        opacity: 1;
+        transform: none;
+    }
+
+    .project-card:hover::after {
+        opacity: 1;
+    }
+
+}
 /* ===============================
    FUSION LEAGUE POSTER
 ================================= */
