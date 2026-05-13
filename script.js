@@ -1,5 +1,5 @@
 /* ===============================
-   🎬 SMOOTH SCROLL
+    SMOOTH SCROLL
 ================================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -17,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 /* ===============================
-   🎬 SCROLL FADE-IN ANIMATION
+    SCROLL FADE-IN ANIMATION
 ================================= */
 const sections = document.querySelectorAll('.section');
 
@@ -40,7 +40,7 @@ revealSections();
 
 
 /* ===============================
-   🎧 HOVER SOUND (SAFE VERSION)
+    HOVER SOUND (SAFE VERSION)
 ================================= */
 function playSound() {
     const sound = document.getElementById("hoverSound");
@@ -53,3 +53,15 @@ function playSound() {
         sound.play().catch(() => {});
     }
 }
+/*=====================
+   mobile cards click
+=======================*/
+document.querySelectorAll('.project-card').forEach(card => {
+
+    card.addEventListener('click', () => {
+
+        card.classList.toggle('active');
+
+    });
+
+});
