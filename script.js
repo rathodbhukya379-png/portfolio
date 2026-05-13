@@ -8,9 +8,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
 
         if (target) {
+
             target.scrollIntoView({
                 behavior: 'smooth'
             });
+
         }
 
     });
@@ -18,16 +20,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// Hover Sound
-function playSound() {
+// SECTION REVEAL
+const sections = document.querySelectorAll('.section');
 
-    let sound = document.getElementById("hoverSound");
+function revealSections() {
 
-    sound.volume = 0.2;
-    sound.currentTime = 0;
-    sound.play();
+    const triggerPoint = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerPoint) {
+
+            section.classList.add('show');
+
+        }
+
+    });
 
 }
+
+window.addEventListener('scroll', revealSections);
+
+revealSections();
 
 
 // MOBILE CARD EFFECT
@@ -35,10 +51,8 @@ document.querySelectorAll('.project-card').forEach(card => {
 
     card.addEventListener('click', () => {
 
-        // activate
         card.classList.add('active');
 
-        // reset timer
         clearTimeout(card.timeout);
 
         card.timeout = setTimeout(() => {
@@ -48,5 +62,20 @@ document.querySelectorAll('.project-card').forEach(card => {
         }, 1500);
 
     });
+
+});
+
+
+// MOUSE GLOW
+const glow = document.createElement('div');
+
+glow.classList.add('glow');
+
+document.body.appendChild(glow);
+
+document.addEventListener('mousemove', e => {
+
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
 
 });
